@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Index from './components/home/Index';
+import {Routes,Route} from 'react-router-dom'
+import Adduser from './components/adduser/Adduser'
+import Edituser from './components/edituser/Edituser'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/add" element={<Adduser />} />
+      <Route path="/edit/:id" element={<Edituser />} />
+    </Routes>
+   
+    </>
   );
 }
 
